@@ -6,7 +6,7 @@ RUN  apt-get update \
  && apt-get install -y wget \
  && rm -rf /var/lib/apt/lists/* \
  && mkdir -p /opt/cerebro/logs \
- && wget -qO- https://github.com/lorenzoaiello/cerebro/releases/download/v${CEREBRO_VERSION}/cerebro-${CEREBRO_VERSION}.tgz \
+ && wget -qO- https://github.com/lorenzoaiello/cerebro/archive/v0.8.3-dev.tar.gz \
   | tar xzv --strip-components 1 -C /opt/cerebro \
  && sed -i '/<appender-ref ref="FILE"\/>/d' /opt/cerebro/conf/logback.xml \
  && addgroup -gid 1000 cerebro \
